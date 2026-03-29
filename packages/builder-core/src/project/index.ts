@@ -43,7 +43,7 @@ export class ProjectManager {
 
     if (!result.rows.length) return null
 
-    const row = result.rows[0]
+    const row = result.rows[0]!
     return this.parseRow(row)
   }
 

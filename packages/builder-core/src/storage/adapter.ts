@@ -1,5 +1,3 @@
-import type { SQL } from "drizzle-orm"
-
 export interface QueryResult<T> {
   rows: T[]
   rowCount: number

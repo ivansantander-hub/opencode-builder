@@ -84,10 +84,10 @@ export class MemoryAdapter implements StorageAdapter {
 
       if (idx >= 0) {
         // Parse SET clause to know which fields to update
-        const setPart = sql.split(/WHERE/i)[0]
+        const setPart = sql.split(/WHERE/i)[0] ?? ""
         const setMatch = setPart.match(/SET\s+(.+)/i)
 
-        if (setMatch) {
+        if (setMatch?.[1]) {
           // Handle both simple SET (field = ?) and multi SET (field = ?, field = ?)
           const setParts = setMatch[1].split(",").map((s: string) => s.trim())
 
@@ -97,7 +97,7 @@ export class MemoryAdapter implements StorageAdapter {
           setParts.forEach((part: string, i: number) => {
             const [key] = part.split("=").map((s: string) => s.trim())
             if (key && valuesToSet[i] !== undefined) {
-              existing[idx][key] = valuesToSet[i]
+              existing[idx]![key] = valuesToSet[i]
             }
           })
         }
@@ -126,7 +126,7 @@ export class MemoryAdapter implements StorageAdapter {
   private extractColumns(sql: string): string[] {
     const match = sql.match(/\(([^)]+)\)\s*VALUES/i)
     if (!match) return []
-    return match[1].split(",").map((c: string) => c.trim())
+    return match[1]!.split(",").map((c: string) => c.trim())
   }
 
   clear(): void {
