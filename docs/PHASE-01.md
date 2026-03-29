@@ -10,8 +10,11 @@
 # Crear estructura de directorios
 mkdir -p packages/builder-core/src/{project,database,deploy,storage,wizard,skills}
 mkdir -p packages/builder-core/migrations
+mkdir -p packages/builder-core/test/{unit,integration}
 mkdir -p packages/builder-api/src/{routes,middleware}
+mkdir -p packages/builder-api/test/{unit,integration}
 mkdir -p packages/builder/src/{routes,components,contexts,styles}
+mkdir -p packages/builder/test/{unit,integration,components}
 ```
 
 **Tareas:**
@@ -227,7 +230,134 @@ packages/builder/
 
 ---
 
-## 1.8 Push a GitHub
+## 1.8 Testing Setup
+
+**Objetivo:** Configurar testing desde el inicio para evitar deuda técnica
+
+### 1.8.1 Configuración de Testing
+
+**Stack de testing:**
+
+- **Unit tests**: Bun (nativo del repo) o Vitest
+- **Integration tests**: Bun + supertest o Playwright
+- **Component tests**: Vitest + @testing-library/solid
+
+**Archivos de configuración:**
+
+```
+packages/builder-core/
+├── vitest.config.ts          # Config Vitest
+├── test/
+│   ├── setup.ts             # Setup global
+│   ├── unit/                # Tests unitarios
+│   └── integration/         # Tests de integración
+
+packages/builder-api/
+├── vitest.config.ts
+├── test/
+│   ├── setup.ts
+│   ├── unit/
+│   └── integration/
+│       ├── routes.test.ts   # Tests de API routes
+│       └── auth.test.ts     # Tests de auth
+
+packages/builder/
+├── vitest.config.ts
+├── test/
+│   ├── setup.ts
+│   ├── unit/
+│   ├── integration/
+│   └── components/         # Tests de componentes
+```
+
+### Checklist Testing:
+
+- [ ] `vitest.config.ts` en builder-core
+- [ ] `vitest.config.ts` en builder-api
+- [ ] `vitest.config.ts` en builder
+- [ ] Setup global de tests
+- [ ] Scripts de test en package.json
+
+### 1.8.2 Tests Unitarios builder-core
+
+**Schemas y tipos:**
+
+- [ ] Test: ProjectTable schema validation
+- [ ] Test: SessionTable schema validation
+- [ ] Test: MessageTable schema validation
+- [ ] Test: DatabaseTable schema validation
+- [ ] Test: DeploymentTable schema validation
+- [ ] Test: RepositoryTable schema validation
+
+**Storage adapters:**
+
+- [ ] Test: StorageAdapter interface
+- [ ] Test: D1Adapter query
+- [ ] Test: D1Adapter execute
+- [ ] Test: D1Adapter transaction
+- [ ] Test: MemoryAdapter (desarrollo)
+
+**Lógica de negocio:**
+
+- [ ] Test: Project CRUD operations
+- [ ] Test: Session CRUD operations
+- [ ] Test: Message operations
+- [ ] Test: Validación de datos
+
+### 1.8.3 Tests de Integración builder-api
+
+**Middleware:**
+
+- [ ] Test: JWT validation middleware
+- [ ] Test: Rate limiting middleware
+- [ ] Test: Project context middleware
+
+**Routes:**
+
+- [ ] Test: GET /projects - 401 sin auth
+- [ ] Test: GET /projects - 200 con auth
+- [ ] Test: POST /projects - crear proyecto
+- [ ] Test: GET /projects/:id - obtener proyecto
+- [ ] Test: PUT /projects/:id - actualizar proyecto
+- [ ] Test: DELETE /projects/:id - eliminar proyecto
+
+**Errores:**
+
+- [ ] Test: 404 para proyecto no existente
+- [ ] Test: 403 para acceso denegado
+- [ ] Test: 400 para datos inválidos
+
+### 1.8.4 Tests de Componentes builder
+
+**UI Components:**
+
+- [ ] Test: Button renders correctly
+- [ ] Test: Button click handler
+- [ ] Test: Input value binding
+- [ ] Test: Card renders children
+- [ ] Test: Modal open/close
+
+**Contexts:**
+
+- [ ] Test: Auth context provides user
+- [ ] Test: Project context provides project
+
+### 1.8.5 Scripts de Testing
+
+```json
+{
+  "scripts": {
+    "test": "vitest",
+    "test:unit": "vitest run",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:coverage": "vitest run --coverage"
+  }
+}
+```
+
+---
+
+## 1.9 Push a GitHub
 
 **Objetivo:** Subir cambios al repositorio
 
@@ -250,7 +380,13 @@ Al finalizar esta fase deberemos tener:
 - ✅ Auth integrada con Console
 - ✅ D1 configurado con migraciones
 - ✅ Tailwind y componentes base
+- ✅ Testing configurado (Vitest)
+- ✅ Tests unitarios de schemas
+- ✅ Tests unitarios de storage adapters
+- ✅ Tests de integración de API routes
+- ✅ Tests de componentes UI
 - ✅ Proyecto compilable
+- ✅ Todos los tests passing
 
 ---
 
@@ -259,4 +395,6 @@ Al finalizar esta fase deberemos tener:
 - Usar las mismas convenciones del repo (TypeScript, Drizzle, Hono, SolidJS)
 - Mantener código simple al inicio
 - Documentar decisiones técnicas
-- Tests unitarios donde sea necesario
+- **Tests son obligatorios**: no hacer commit sin tests passing
+- **Coverage mínimo**: 80% en código de negocio
+- **Naming**: `*.test.ts` para unit, `*.integration.test.ts` para integración
