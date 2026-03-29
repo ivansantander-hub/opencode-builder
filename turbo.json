@@ -8,12 +8,28 @@
       "dependsOn": [],
       "outputs": ["dist/**"]
     },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
     "opencode#test": {
       "dependsOn": ["^build"],
       "outputs": []
     },
     "@opencode-ai/app#test": {
       "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "@opencode-ai/builder-core#test": {
+      "dependsOn": [],
+      "outputs": []
+    },
+    "@opencode-ai/builder-api#test": {
+      "dependsOn": ["@opencode-ai/builder-core#build"],
+      "outputs": []
+    },
+    "@opencode-ai/builder#test": {
+      "dependsOn": ["@opencode-ai/builder-core#build"],
       "outputs": []
     }
   }

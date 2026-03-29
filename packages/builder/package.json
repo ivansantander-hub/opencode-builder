@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@opencode-ai/builder",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "vitest",
+    "test:unit": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "solid-js": "1.9.5",
+    "@solidjs/router": "0.15.3",
+    "@solidjs/meta": "0.29.4",
+    "@opencode-ai/sdk": "file:../sdk/js",
+    "@kobalte/core": "0.13.11"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.0.15",
+    "@testing-library/jest-dom": "6.9.1",
+    "@tsconfig/bun": "1.0.9",
+    "@types/bun": "1.2.5",
+    "@vitest/coverage-v8": "3.0.0",
+    "jsdom": "26.0.0",
+    "tailwindcss": "4.0.15",
+    "typescript": "5.8.2",
+    "vite": "6.2.2",
+    "vite-plugin-solid": "2.11.6",
+    "vitest": "3.0.0"
+  }
+}

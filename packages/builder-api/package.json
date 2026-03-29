@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@opencode-ai/builder-api",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest",
+    "test:unit": "vitest run",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "hono": "4.7.4",
+    "@hono/zod-validator": "0.4.3",
+    "drizzle-orm": "0.40.0",
+    "zod": "3.24.2",
+    "ulid": "3.0.1",
+    "@opencode-ai/builder-core": "file:../builder-core",
+    "jose": "6.0.10"
+  },
+  "devDependencies": {
+    "@types/bun": "1.2.5",
+    "@tsconfig/bun": "1.0.9",
+    "@cloudflare/workers-types": "4.20250320.0",
+    "wrangler": "4.5.1",
+    "typescript": "5.8.2",
+    "vitest": "3.0.0",
+    "@vitest/coverage-v8": "3.0.0",
+    "miniflare": "4.20250320.0"
+  }
+}

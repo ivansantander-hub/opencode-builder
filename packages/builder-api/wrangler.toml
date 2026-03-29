@@ -1,0 +1,11 @@
+name = "builder-api"
+main = "src/index.ts"
+compatibility_date = "2025-03-28"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "builder-db"
+database_id = "local-builder-db"
+
+[vars]
+JWT_SECRET = "local-dev-secret"
