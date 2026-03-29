@@ -942,7 +942,7 @@ _(Usa el auth del Console - shared cookies/session)_
 
 ## 8. Plan de Implementación (Fases)
 
-### Fase 1: Setup y Base (Semana 1)
+### Fase 1: Setup y Base
 
 - [ ] Crear estructura de paquetes
 - [ ] Crear `packages/builder-core` con schema D1
@@ -952,7 +952,7 @@ _(Usa el auth del Console - shared cookies/session)_
 - [ ] Integrar auth del Console
 - [ ] Configurar Tailwind y componentes base
 
-### Fase 2: Templates Base (Semana 2)
+### Fase 2: Templates Base
 
 Desarrollo de los templates predefinidos:
 
@@ -969,7 +969,7 @@ Desarrollo de los templates predefinidos:
   - Componentes base
   - Metadata del template
 
-### Fase 3: Templates Avanzados (Semana 3)
+### Fase 3: Templates Avanzados
 
 - [ ] Template `spa-vue` (Vue + Vite)
 - [ ] Template `fullstack-next` (Next.js)
@@ -980,7 +980,7 @@ Desarrollo de los templates predefinidos:
 - [ ] Template `backend-graphql` (Apollo + Express)
   - Schema, resolvers base
 
-### Fase 4: CRUD Proyectos (Semana 4)
+### Fase 4: CRUD Proyectos
 
 - [ ] API de proyectos (list, create, read, update, delete)
 - [ ] API de archivos (CRUD)
@@ -988,7 +988,7 @@ Desarrollo de los templates predefinidos:
 - [ ] Integración con templates
 - [ ] Clonar template al crear proyecto
 
-### Fase 5: Editor y Preview (Semana 5)
+### Fase 5: Editor y Preview
 
 - [ ] Integrar Monaco Editor
 - [ ] File tree component
@@ -996,14 +996,14 @@ Desarrollo de los templates predefinidos:
 - [ ] Integración editor ↔ file tree
 - [ ] Sincronización de cambios
 
-### Fase 6: Terminal (Semana 6)
+### Fase 6: Terminal
 
 - [ ] WebSocket a opencode serve
 - [ ] Integrar xterm.js
 - [ ] Comandos básicos (npm install, npm run dev, etc.)
 - [ ] Terminal en UI
 
-### Fase 7: Git Versioning (Semana 7)
+### Fase 7: Git Versioning
 
 - [ ] GitHub App setup y OAuth
 - [ ] Crear repositorio automáticamente
@@ -1011,14 +1011,14 @@ Desarrollo de los templates predefinidos:
 - [ ] APIs de git (commits, repo)
 - [ ] Timeline visual en UI
 
-### Fase 8: Bases de Datos (Semana 8)
+### Fase 8: Bases de Datos
 
 - [ ] Integración D1 (SQLite)
 - [ ] Abstacción para PostgreSQL
 - [ ] UI de queries
 - [ ] Conexión de DBs por proyecto
 
-### Fase 9: Chat IA (Semana 9)
+### Fase 9: Chat IA
 
 - [ ] Integración con session.prompt
 - [ ] UI del chat
@@ -1026,7 +1026,7 @@ Desarrollo de los templates predefinidos:
 - [ ] Historial de mensajes
 - [ ] Tool calls y resultados
 
-### Fase 10: Importar Proyectos (Semana 10)
+### Fase 10: Importar Proyectos
 
 - [ ] GitHub OAuth para importar
 - [ ] Importar desde repositorio GitHub
@@ -1034,7 +1034,7 @@ Desarrollo de los templates predefinidos:
 - [ ] Importar desde URL (git clone)
 - [ ] Detección automática de framework
 
-### Fase 11: Skills (Semana 11)
+### Fase 11: Skills
 
 - [ ] Skills por defecto de cada template
 - [ ] Sistema de skills adicionales
@@ -1042,14 +1042,14 @@ Desarrollo de los templates predefinidos:
 - [ ] Skills personalizadas por usuario
 - [ ] Integración con OpenCode
 
-### Fase 12: Deployment (Semana 12)
+### Fase 12: Deployment
 
 - [ ] GitHub Pages integration
 - [ ] URLs de preview públicas
 - [ ] Sistema de deployments
 - [ ] Estado de deployment (building, ready, error)
 
-### Fase 13: AI Assistants (Semanas 13-16)
+### Fase 13: AI Assistants
 
 - [ ] Code Review Assistant
 - [ ] Debugging Assistant
@@ -1061,47 +1061,13 @@ Desarrollo de los templates predefinidos:
 - [ ] Dependency Manager
 - [ ] UI de AI Assistants
 
-### Fase 14: Wizard y polish (Semanas 17-18)
+### Fase 14: Wizard y polish
 
 - [ ] Wizard de configuración completo
 - [ ] Mejoras UI/UX
 - [ ] Optimización de performance
 - [ ] Tests y documentación
 - [ ] Beta testing
-
----
-
-## 9. Costos Estimados (Monthly)
-
-| Recurso            | Uso          | Costo       |
-| ------------------ | ------------ | ----------- |
-| Cloudflare Workers | API + Server | $5/mes      |
-| D1 (SQLite)        | 5GB          | $5/mes      |
-| Cloudflare Pages   | 500MB        | Gratis      |
-| GitHub API         | Commits      | Gratis      |
-| **Total**          |              | **$10/mes** |
-
-_(Más usuarios = más D1 = ~$5/mes por cada 5GB extra)_
-
-## 10. Timeline Estimado
-
-| Fase      | Descripción         | Duración                    |
-| --------- | ------------------- | --------------------------- |
-| 1         | Setup y Base        | 1 semana                    |
-| 2         | Templates Base      | 1 semana                    |
-| 3         | Templates Avanzados | 1 semana                    |
-| 4         | CRUD Proyectos      | 1 semana                    |
-| 5         | Editor y Preview    | 1 semana                    |
-| 6         | Terminal            | 1 semana                    |
-| 7         | Git Versioning      | 1 semana                    |
-| 8         | Bases de Datos      | 1 semana                    |
-| 9         | Chat IA             | 1 semana                    |
-| 10        | Importar Proyectos  | 1 semana                    |
-| 11        | Skills              | 1 semana                    |
-| 12        | Deployment          | 1 semana                    |
-| 13        | AI Assistants       | 4 semanas                   |
-| 14        | Wizard y polish     | 2 semanas                   |
-| **Total** |                     | **18 semanas** (~4.5 meses) |
 
 ---
 

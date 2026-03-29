@@ -536,55 +536,55 @@ export const DeploymentTable = sqliteTable("deployment", {
 
 ## 8. Plan de Implementación (Fases)
 
-### Fase 1: Setup y Base (Semana 1)
+### Fase 1: Setup y Base
 
 - [ ] Crear `packages/builder-core` con schema D1
 - [ ] Crear `packages/builder-api` con Cloudflare Workers
 - [ ] Configurar D1 y migraciones
 - [ ] Integrar auth del Console
 
-### Fase 2: CRUD Proyectos (Semana 2)
+### Fase 2: CRUD Proyectos
 
 - [ ] API de proyectos
 - [ ] API de archivos
 - [ ] UI básica del dashboard
 
-### Fase 3: Editor y Preview (Semana 3)
+### Fase 3: Editor y Preview
 
 - [ ] Monaco Editor
 - [ ] File tree component
 - [ ] Preview con Blob URLs
 
-### Fase 4: Terminal (Semana 4)
+### Fase 4: Terminal
 
 - [ ] WebSocket a opencode serve
 - [ ] xterm.js
 - [ ] Comandos básicos
 
-### Fase 5: Bases de Datos (Semana 5)
+### Fase 5: Bases de Datos
 
 - [ ] D1 integration
 - [ ] PostgreSQL abstraction
 - [ ] UI de queries
 
-### Fase 6: Chat IA (Semana 6)
+### Fase 6: Chat IA
 
 - [ ] session.prompt integration
 - [ ] UI del chat
 
-### Fase 7: Deployment (Semana 7)
+### Fase 7: Deployment
 
 - [ ] GitHub Pages integration
 - [ ] URLs de preview
 
-### Fase 8: Importar Proyectos (Semana 8)
+### Fase 8: Importar Proyectos
 
 - [ ] GitHub OAuth
 - [ ] GitLab OAuth
 - [ ] Import desde URL
 - [ ] Detección automática de framework
 
-### Fase 9: AI Assistants (Semanas 9-12)
+### Fase 9: AI Assistants
 
 - [ ] Code Review Assistant
 - [ ] Debugging Assistant
@@ -593,14 +593,14 @@ export const DeploymentTable = sqliteTable("deployment", {
 - [ ] Refactoring Assistant
 - [ ] Security Audit
 
-### Fase 10: AI Assistants II (Semanas 13-16)
+### Fase 10: AI Assistants II
 
 - [ ] CI/CD Generator
 - [ ] Dependency Manager
 - [ ] API Integration Helper
 - [ ] Performance Optimizer
 
-### Fase 11: Wizard y polish (Semanas 17-18)
+### Fase 11: Wizard y polish
 
 - [ ] Wizard de configuración
 - [ ] Mejoras UI/UX

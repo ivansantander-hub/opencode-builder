@@ -1,6 +1,5 @@
 # Fase 1: Setup y Base
 
-**Duración:** 1 semana
 **Objetivo:** Crear la estructura base del proyecto
 
 ---
