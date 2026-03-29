@@ -4,11 +4,14 @@ import { logger } from "hono/logger"
 import { auth } from "./middleware/auth.js"
 import { limits } from "./middleware/limits.js"
 import { projects } from "./routes/projects.js"
+import { authRoutes } from "./routes/auth.js"
 import type { D1Database } from "@cloudflare/workers-types"
 
 export interface Env {
   DB: D1Database
   JWT_SECRET: string
+  VALID_EMAIL?: string
+  VALID_PASSWORD?: string
 }
 
 export type Variables = {
@@ -23,8 +26,10 @@ app.use("*", cors({ origin: "*" }))
 
 app.get("/", (c) => c.json({ status: "ok", service: "builder-api" }))
 
-app.use("/api/builder/*", auth)
-app.use("/api/builder/*", limits)
+app.route("/api/builder/auth", authRoutes)
+
+app.use("/api/builder/projects", auth)
+app.use("/api/builder/projects", limits)
 
 app.route("/api/builder/projects", projects)
 

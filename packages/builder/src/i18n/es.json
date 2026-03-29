@@ -79,6 +79,20 @@
   "auth": {
     "login": "Iniciar sesión",
     "logout": "Cerrar sesión",
-    "welcome": "Bienvenido"
+    "welcome": "Bienvenido",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "emailPlaceholder": "Ingresa tu correo",
+    "passwordPlaceholder": "Ingresa tu contraseña",
+    "loginButton": "Iniciar Sesión",
+    "loginError": "Correo o contraseña inválidos",
+    "register": "Registrarse",
+    "registerButton": "Crear Cuenta",
+    "registerSuccess": "Cuenta creada exitosamente",
+    "registerError": "Error en el registro",
+    "passwordsDoNotMatch": "Las contraseñas no coinciden",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "dontHaveAccount": "¿No tienes una cuenta?"
   }
 }

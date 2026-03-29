@@ -13,6 +13,7 @@
     "dev:storybook": "bun --cwd packages/storybook storybook",
     "dev:builder": "bun --cwd packages/builder dev",
     "dev:builder-api": "bun --cwd packages/builder-api dev",
+    "dev:all": "bun run dev:builder-api & bun run dev:builder",
     "typecheck": "bun turbo typecheck",
     "prepare": "husky",
     "random": "echo 'Random script'",

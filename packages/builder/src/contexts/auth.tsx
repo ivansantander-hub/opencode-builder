@@ -8,7 +8,8 @@ interface User {
 interface AuthContextValue {
   user: () => User | null
   isAuthenticated: () => boolean
-  login: (token: string) => void
+  login: (email: string, password: string) => Promise<boolean>
+  register: (email: string, password: string, confirmPassword: string) => Promise<{ success: boolean; error?: string }>
   logout: () => void
   token: () => string | null
 }
@@ -19,10 +20,51 @@ export const AuthProvider: ParentComponent = (props) => {
   const [user, setUser] = createSignal<User | null>(null)
   const [token, setToken] = createSignal<string | null>(localStorage.getItem("token"))
 
-  const login = (newToken: string) => {
-    localStorage.setItem("token", newToken)
-    setToken(newToken)
-    setUser({ id: "user-1", email: "user@example.com" })
+  const login = async (email: string, password: string): Promise<boolean> => {
+    try {
+      const response = await fetch("/api/builder/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      })
+
+      if (!response.ok) return false
+
+      const data = await response.json()
+      localStorage.setItem("token", data.token)
+      setToken(data.token)
+      setUser(data.user)
+      return true
+    } catch {
+      return false
+    }
+  }
+
+  const register = async (
+    email: string,
+    password: string,
+    confirmPassword: string,
+  ): Promise<{ success: boolean; error?: string }> => {
+    try {
+      const response = await fetch("/api/builder/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password, confirmPassword }),
+      })
+
+      if (!response.ok) {
+        const data = await response.json()
+        return { success: false, error: data.error }
+      }
+
+      const data = await response.json()
+      localStorage.setItem("token", data.token)
+      setToken(data.token)
+      setUser(data.user)
+      return { success: true }
+    } catch {
+      return { success: false, error: "Network error" }
+    }
   }
 
   const logout = () => {
@@ -39,6 +81,7 @@ export const AuthProvider: ParentComponent = (props) => {
         user,
         isAuthenticated,
         login,
+        register,
         logout,
         token,
       }}

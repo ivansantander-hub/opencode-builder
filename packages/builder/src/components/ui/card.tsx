@@ -1,5 +1,9 @@
 import type { ParentComponent } from "solid-js"
 
-export const Card: ParentComponent = (props) => {
-  return <div class="card">{props.children}</div>
+interface CardProps {
+  class?: string
+}
+
+export const Card: ParentComponent<CardProps> = (props) => {
+  return <div class={`card ${props.class || ""}`}>{props.children}</div>
 }

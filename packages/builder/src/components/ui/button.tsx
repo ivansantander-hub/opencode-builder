@@ -5,6 +5,7 @@ export interface ButtonProps {
   type?: "button" | "submit"
   variant?: "primary" | "secondary"
   disabled?: boolean
+  class?: string
   children: string
 }
 
@@ -16,7 +17,7 @@ export const Button: Component<ButtonProps> = (props) => {
   return (
     <button
       type={props.type || "button"}
-      class={`${baseClass} ${variantClass}${disabledClass}`}
+      class={`${baseClass} ${variantClass}${disabledClass} ${props.class || ""}`}
       onClick={props.onClick}
       disabled={props.disabled}
     >

@@ -9,3 +9,5 @@ database_id = "local-builder-db"
 
 [vars]
 JWT_SECRET = "local-dev-secret"
+VALID_EMAIL = "admin@example.com"
+VALID_PASSWORD = "password123"

@@ -192,6 +192,12 @@ packages/builder/
 - [x] Integrar JWT validation
 - [ ] Conectar con console auth
 - [x] Proteger rutas
+- [x] Endpoint /api/builder/auth/login para generar tokens
+- [x] Endpoint /api/builder/auth/register para registro
+- [x] Componente LoginForm en frontend
+- [x] Componente RegisterForm en frontend
+- [x] Botón de logout en header
+- [x] Switch entre login/registro
 
 ---
 
@@ -377,7 +383,8 @@ Al finalizar esta fase deberemos tener:
 - [x] builder-core con schema D1
 - [x] builder-api con Cloudflare Workers
 - [x] builder con UI base SolidJS
-- [ ] Auth integrada con Console (JWT listo, falta conexión)
+- [x] Auth implementada (JWT + login endpoint)
+- [ ] Auth integrada con Console (pendiente conexión)
 - [x] D1 configurado con migraciones (schema local)
 - [x] Tailwind y componentes base (Button, Input, Card)
 - [x] Testing configurado (Vitest)
