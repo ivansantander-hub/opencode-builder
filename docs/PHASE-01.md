@@ -116,14 +116,14 @@ packages/builder-api/
 - [x] Entry point con Hono app
 - [x] Middleware de auth (JWT)
 - [x] Middleware de rate limiting
-- [ ] Middleware de proyecto
+- [x] Middleware de proyecto
 - [x] Route: projects (CRUD)
-- [ ] Route: files (CRUD)
-- [ ] Route: databases
-- [ ] Route: sessions
-- [ ] Route: messages
-- [ ] Route: deploy
-- [ ] WebSocket para terminal
+- [x] Route: files (CRUD)
+- [x] Route: databases
+- [x] Route: sessions
+- [x] Route: messages
+- [x] Route: deploy
+- [ ] WebSocket para terminal (pendiente)
 - [x] Bindings para D1
 
 ---
@@ -410,6 +410,8 @@ Al finalizar esta fase deberemos tener:
 - [x] Tests de integración de API routes (auth)
 - [x] Tests de componentes UI
 - [x] Tests E2E de autenticación
+- [x] API Routes: files, sessions, messages, databases, deploy
+- [x] Middleware de proyecto
 - [x] Proyecto compilable
 - [x] Todos los tests passing (70 tests)
 
