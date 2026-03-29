@@ -67,13 +67,15 @@ packages/builder-core/
 - [x] `drizzle.config.ts`
 - [x] Schema: ProjectTable
 - [x] Schema: SessionTable
-- [ ] Schema: MessageTable
-- [ ] Schema: DatabaseTable
-- [ ] Schema: DeploymentTable
-- [ ] Schema: RepositoryTable
-- [x] Schema: CommitTable (renombrado a git_commit)
+- [x] Schema: MessageTable
+- [x] Schema: DatabaseTable
+- [x] Schema: DeploymentTable
+- [x] Schema: RepositoryTable
+- [x] Schema: CommitTable
 - [x] Storage interface y adapters
 - [x] Proyecto base para CRUD
+- [x] Relations entre tablas
+- [x] Tests de schemas (7 tablas)
 
 ---
 
@@ -302,18 +304,20 @@ packages/builder/
 **Schemas y tipos:**
 
 - [x] Test: ProjectTable schema validation
-- [ ] Test: SessionTable schema validation
-- [ ] Test: MessageTable schema validation
-- [ ] Test: DatabaseTable schema validation
-- [ ] Test: DeploymentTable schema validation
-- [ ] Test: RepositoryTable schema validation
+- [x] Test: SessionTable schema validation
+- [x] Test: MessageTable schema validation
+- [x] Test: DatabaseTable schema validation
+- [x] Test: DeploymentTable schema validation
+- [x] Test: RepositoryTable schema validation
+- [x] Test: CommitTable schema validation
+- [x] Test: Relations entre tablas
 
 **Storage adapters:**
 
 - [x] Test: StorageAdapter interface
-- [ ] Test: D1Adapter query
-- [ ] Test: D1Adapter execute
-- [ ] Test: D1Adapter transaction
+- [ ] Test: D1Adapter query (pendiente - usar en producción)
+- [ ] Test: D1Adapter execute (pendiente - usar en producción)
+- [ ] Test: D1Adapter transaction (pendiente - usar en producción)
 - [x] Test: MemoryAdapter (desarrollo)
 
 **Lógica de negocio:**
@@ -403,10 +407,11 @@ Al finalizar esta fase deberemos tener:
 - [x] Testing configurado (Vitest)
 - [x] Tests unitarios de schemas
 - [x] Tests unitarios de storage adapters
-- [ ] Tests de integración de API routes (parcial)
+- [x] Tests de integración de API routes (auth)
 - [x] Tests de componentes UI
+- [x] Tests E2E de autenticación
 - [x] Proyecto compilable
-- [x] Todos los tests passing (56 tests)
+- [x] Todos los tests passing (70 tests)
 
 ---
 
