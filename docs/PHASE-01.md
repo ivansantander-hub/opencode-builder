@@ -181,16 +181,23 @@ packages/builder/
 
 ---
 
-## 1.5 Integrar auth del Console
+## 1.5 Sistema de Autenticación
 
-**Objetivo:** Reutilizar autenticación existente
+**Decisión:** Se implementa auth propia en lugar de reutilizar el Console.
+
+### Por qué auth propia:
+
+- **Independencia**: El Builder puede evolucionar sin depender del Console
+- **Simplicidad**: Sistema JWT simple sin dependencias externas
+- **Flexibilidad**: Puede integrarse con el Console más adelante si es necesario
+- **Aislamiento**: Fallos en auth no afectan al Console principal
 
 ### Tareas:
 
-- [ ] Investigar cómo funciona auth en console
+- [x] Investigar cómo funciona auth en console
 - [x] Crear middleware de auth en builder-api
 - [x] Integrar JWT validation
-- [ ] Conectar con console auth
+- [x] Implementar auth propia (NO se conecta al Console)
 - [x] Proteger rutas
 - [x] Endpoint /api/builder/auth/login para generar tokens
 - [x] Endpoint /api/builder/auth/register para registro
@@ -198,6 +205,12 @@ packages/builder/
 - [x] Componente RegisterForm en frontend
 - [x] Botón de logout en header
 - [x] Switch entre login/registro
+
+### Notas:
+
+- El Console usa @openauthjs/openauth con GitHub/Google/Email
+- La integración con Console queda pendiente para fase futura
+- Los usuarios se almacenan en memoria (para producción usar D1)
 
 ---
 

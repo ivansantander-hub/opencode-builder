@@ -824,12 +824,18 @@ export const DeploymentTable = sqliteTable("deployment", {
 
 ### Autenticación
 
-| Método | Endpoint                    | Descripción    |
-| ------ | --------------------------- | -------------- |
-| GET    | `/api/builder/auth/me`      | Usuario actual |
-| POST   | `/api/builder/auth/refresh` | Refresh token  |
+| Método | Endpoint                     | Descripción      |
+| ------ | ---------------------------- | ---------------- |
+| POST   | `/api/builder/auth/login`    | Login usuario    |
+| POST   | `/api/builder/auth/register` | Registro usuario |
+| GET    | `/api/builder/auth/me`       | Usuario actual   |
+| POST   | `/api/builder/auth/refresh`  | Refresh token    |
 
-_(Usa el auth del Console - shared cookies/session)_
+**Sistema de auth propia (JWT)** - Independiente del Console.
+
+- Tokens JWT con expiración de 7 días
+- Registro y login propios
+- Middleware de validación en rutas protegidas
 
 ### Proyectos
 
@@ -944,13 +950,13 @@ _(Usa el auth del Console - shared cookies/session)_
 
 ### Fase 1: Setup y Base
 
-- [ ] Crear estructura de paquetes
-- [ ] Crear `packages/builder-core` con schema D1
-- [ ] Crear `packages/builder-api` con Cloudflare Workers
-- [ ] Crear `packages/builder` con UI base
-- [ ] Configurar D1 y migraciones
-- [ ] Integrar auth del Console
-- [ ] Configurar Tailwind y componentes base
+- [x] Crear estructura de paquetes
+- [x] Crear `packages/builder-core` con schema D1
+- [x] Crear `packages/builder-api` con Cloudflare Workers
+- [x] Crear `packages/builder` con UI base
+- [x] Configurar D1 y migraciones
+- [x] Implementar auth propia (JWT) - NO se conecta al Console
+- [x] Configurar Tailwind y componentes base
 
 ### Fase 2: Templates Base
 
@@ -1089,7 +1095,7 @@ Desarrollo de los templates predefinidos:
 | ------------ | ------------------------------------------- |
 | UI           | SolidJS + Tailwind + Monaco Editor          |
 | API          | Cloudflare Workers + Hono                   |
-| Auth         | Reusar Console (OAuth + JWT)                |
+| Auth         | Auth propia (JWT) - Independiente           |
 | Storage      | D1 (SQLite) con abstracción para PostgreSQL |
 | Preview Dev  | Blob URLs                                   |
 | Preview Prod | GitHub Pages / Cloudflare Pages             |
@@ -1121,9 +1127,13 @@ Desarrollo de los templates predefinidos:
 
 ## 13. Autenticación
 
-- Reutilizar sistema de auth del Console
-- JWT tokens para API
-- API keys por usuario/workspace
+**Sistema propio (JWT)** - Independiente del Console
+
+- Login/Registro propios con email + password
+- Tokens JWT con expiración configurable
+- Middleware de validación en rutas protegidas
+- Puede integrarse con Console en fase futura si es necesario
+- API keys por usuario/workspace (pendiente)
 
 ---
 
