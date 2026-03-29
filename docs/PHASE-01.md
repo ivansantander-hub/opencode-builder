@@ -363,9 +363,9 @@ packages/builder/
 
 ### Tareas:
 
-- [ ] git add .
-- [ ] git commit -m "feat: Fase 1 - Setup y Base"
-- [ ] git push fork dev
+- [x] git add .
+- [x] git commit -m "feat: Fase 1 - Setup y Base"
+- [x] git push --set-upstream fork feat/open-code-builder
 
 ---
 
