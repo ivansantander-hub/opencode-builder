@@ -1,0 +1,84 @@
+{
+  "error": {
+    "unauthorized": "No autorizado",
+    "forbidden": "Acceso prohibido",
+    "notFound": "No encontrado",
+    "invalidToken": "Token inválido",
+    "rateLimit": "Límite de peticiones excedido",
+    "validationFailed": "Validación fallida",
+    "internalError": "Error interno del servidor",
+    "network": "Error de red. Por favor verifica tu conexión.",
+    "unknown": "Ocurrió un error inesperado",
+    "retry": "Reintentar"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "minLength": "Debe tener al menos {min} caracteres",
+    "maxLength": "Debe tener como máximo {max} caracteres",
+    "invalidFormat": "Formato inválido"
+  },
+  "project": {
+    "notFound": "Proyecto no encontrado",
+    "created": "Proyecto creado exitosamente",
+    "updated": "Proyecto actualizado exitosamente",
+    "deleted": "Proyecto eliminado exitosamente",
+    "nameRequired": "El nombre del proyecto es obligatorio",
+    "templateRequired": "La plantilla es obligatoria",
+    "create": {
+      "title": "Crear Nuevo Proyecto"
+    },
+    "name": {
+      "label": "Nombre",
+      "placeholder": "Mi Proyecto Increíble"
+    },
+    "description": {
+      "label": "Descripción",
+      "placeholder": "Breve descripción de tu proyecto"
+    },
+    "template": {
+      "label": "Plantilla",
+      "react": "React + Vite",
+      "svelte": "Svelte + Vite",
+      "vue": "Vue + Vite",
+      "astro": "Astro",
+      "nextjs": "Next.js",
+      "nuxt": "Nuxt"
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "search": "Buscar",
+    "close": "Cerrar",
+    "confirm": "Confirmar"
+  },
+  "app": {
+    "title": "OpenCode Builder",
+    "description": "Construye proyectos web con IA"
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "projects": "Proyectos",
+    "settings": "Configuración",
+    "logout": "Cerrar sesión"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "new": "Nuevo Proyecto",
+    "empty": {
+      "message": "No hay proyectos aún",
+      "description": "Crea tu primer proyecto para comenzar"
+    },
+    "search": "Buscar proyectos...",
+    "filter": "Filtrar"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "welcome": "Bienvenido"
+  }
+}

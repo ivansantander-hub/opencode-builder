@@ -32,7 +32,7 @@ const Dashboard: Component = () => {
       })
 
       if (response.ok) {
-        const result = await response.json()
+        const result = (await response.json()) as { project: Project }
         setProjects((prev) => [...prev, result.project])
         setShowCreateForm(false)
       }

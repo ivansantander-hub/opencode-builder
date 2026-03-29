@@ -1,0 +1,84 @@
+{
+  "error": {
+    "unauthorized": "Unauthorized",
+    "forbidden": "Forbidden",
+    "notFound": "Not found",
+    "invalidToken": "Invalid token",
+    "rateLimit": "Rate limit exceeded",
+    "validationFailed": "Validation failed",
+    "internalError": "Internal server error",
+    "network": "Network error. Please check your connection.",
+    "unknown": "An unexpected error occurred",
+    "retry": "Retry"
+  },
+  "validation": {
+    "required": "This field is required",
+    "minLength": "Must be at least {min} characters",
+    "maxLength": "Must be at most {max} characters",
+    "invalidFormat": "Invalid format"
+  },
+  "project": {
+    "notFound": "Project not found",
+    "created": "Project created successfully",
+    "updated": "Project updated successfully",
+    "deleted": "Project deleted successfully",
+    "nameRequired": "Project name is required",
+    "templateRequired": "Template is required",
+    "create": {
+      "title": "Create New Project"
+    },
+    "name": {
+      "label": "Name",
+      "placeholder": "My Awesome Project"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Brief description of your project"
+    },
+    "template": {
+      "label": "Template",
+      "react": "React + Vite",
+      "svelte": "Svelte + Vite",
+      "vue": "Vue + Vite",
+      "astro": "Astro",
+      "nextjs": "Next.js",
+      "nuxt": "Nuxt"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "close": "Close",
+    "confirm": "Confirm"
+  },
+  "app": {
+    "title": "OpenCode Builder",
+    "description": "Build web projects with AI"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "projects": {
+    "title": "Projects",
+    "new": "New Project",
+    "empty": {
+      "message": "No projects yet",
+      "description": "Create your first project to get started"
+    },
+    "search": "Search projects...",
+    "filter": "Filter"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "welcome": "Welcome"
+  }
+}

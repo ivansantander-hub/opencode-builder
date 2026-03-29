@@ -1,6 +1,7 @@
 import { For, type Component } from "solid-js"
 import { Card } from "../ui/card"
 import { Button } from "../ui/button"
+import { LanguageSwitcher } from "../ui/language-switcher"
 import { useI18n } from "../../i18n"
 
 interface Project {
@@ -24,7 +25,10 @@ export const ProjectList: Component<ProjectListProps> = (props) => {
     <div class="space-y-6">
       <div class="flex justify-between items-center">
         <h1 class="text-2xl font-bold text-gray-900">{t("projects.title")}</h1>
-        <Button onClick={props.onCreateClick}>{t("projects.new")}</Button>
+        <div class="flex items-center gap-4">
+          <LanguageSwitcher />
+          <Button onClick={props.onCreateClick}>{t("projects.new")}</Button>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -45,7 +49,7 @@ export const ProjectList: Component<ProjectListProps> = (props) => {
       {props.projects.length === 0 && (
         <Card>
           <div class="text-center py-8">
-            <p class="text-gray-500">{t("projects.empty")}</p>
+            <p class="text-gray-500">{t("projects.empty.message")}</p>
             <p class="text-sm text-gray-400 mt-2">{t("projects.empty.description")}</p>
           </div>
         </Card>
