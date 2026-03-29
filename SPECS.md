@@ -21,7 +21,7 @@ OpenCode Builder es una plataforma de desarrollo web integral que permite a los 
 ```
 ┌──────────────┐    ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
 │   Auth       │───►│   Wizard     │───►│   Editor     │───►│   Preview    │
-│  (Console)   │    │  (Config)    │    │  (Monaco)    │    │  (Blob/GH)   │
+│ (Propia JWT) │    │  (Config)    │    │  (Monaco)    │    │  (Blob/GH)   │
 └──────────────┘    └──────────────┘    └──────────────┘    └──────────────┘
                                                   │
                                                   ▼
