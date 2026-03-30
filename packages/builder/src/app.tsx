@@ -5,6 +5,7 @@ import { I18nProvider } from "./i18n"
 import { lazy } from "solid-js"
 
 const Dashboard = lazy(() => import("./routes/index"))
+const DemoTerminal = lazy(() => import("./routes/demo-terminal"))
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
       )}
     >
       <Route path="/" component={Dashboard} />
+      <Route path="/demo-terminal" component={DemoTerminal} />
     </Router>
   )
 }

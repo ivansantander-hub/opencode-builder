@@ -7,6 +7,15 @@ binding = "DB"
 database_name = "builder-db"
 database_id = "local-builder-db"
 
+[[durable_objects.bindings]]
+name = "TERMINAL"
+class_name = "TerminalDurableObject"
+
+[[durable_objects.bindings]]
+name = "TERMINAL"
+class_name = "TerminalDurableObject"
+script_name = "builder-api"
+
 [vars]
 JWT_SECRET = "local-dev-secret"
 VALID_EMAIL = "admin@example.com"

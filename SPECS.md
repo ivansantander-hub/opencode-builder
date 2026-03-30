@@ -875,9 +875,15 @@ export const DeploymentTable = sqliteTable("deployment", {
 
 ### Terminal (WebSocket)
 
-| Método | Endpoint                             | Descripción          |
-| ------ | ------------------------------------ | -------------------- |
-| WS     | `/api/builder/projects/:id/terminal` | Terminal interactiva |
+| Método | Endpoint                             | Descripción                 |
+| ------ | ------------------------------------ | --------------------------- |
+| WS     | `/api/builder/projects/:id/terminal` | Terminal interactiva (Demo) |
+
+**Implementación:**
+
+- Durable Object para manejo de WebSocket
+- Terminal simulada con comandos básicos (help, ls, pwd, date, whoami, env, clear)
+- Componente frontend con xterm.js
 
 ### Chat / Sessions
 
@@ -1002,12 +1008,14 @@ Desarrollo de los templates predefinidos:
 - [ ] Integración editor ↔ file tree
 - [ ] Sincronización de cambios
 
-### Fase 6: Terminal
+### Fase 6: Terminal (IMPLEMENTADO EN FASE 1)
 
-- [ ] WebSocket a opencode serve
-- [ ] Integrar xterm.js
-- [ ] Comandos básicos (npm install, npm run dev, etc.)
-- [ ] Terminal en UI
+- [x] WebSocket con Durable Objects
+- [x] Integrar xterm.js
+- [x] Comandos básicos simulados
+- [x] Terminal en UI
+
+**Nota:** La implementación actual es una demo. En fase futura se conectará con el backend real.
 
 ### Fase 7: Git Versioning
 
@@ -1100,7 +1108,7 @@ Desarrollo de los templates predefinidos:
 | Preview Dev  | Blob URLs                                   |
 | Preview Prod | GitHub Pages / Cloudflare Pages             |
 | Core IA      | opencode serve (existente)                  |
-| Terminal     | xterm.js + WebSocket                        |
+| Terminal     | xterm.js + WebSocket (Durable Objects)      |
 | Editor       | Monaco Editor                               |
 
 ---
